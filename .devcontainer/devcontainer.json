@@ -1,15 +1,16 @@
 {
-    "name": "Develop Lab Container",
-    "dockerFile": "Dockerfile",
-    "appPort": [3000],
+    "name": "Dev Lab Container",
+    "dockerComposeFile": ["../compose.yaml"],
+    "service": "dev",
+    "workspaceFolder": "/workspace",
     "extensions": [
       "sdras.night-owl",
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode"
     ],
-    "runArgs":["-u","node"],
     "settings":{
       "workbench.colorTheme": "Night Owl",
+      "terminal.integrated.defaultProfile.linux": "bash"
     },
-    "postCreateCommand": "npm install",
+    "shutdownAction": "stopCompose"
   }
